@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1648099951155,
+  "createdBy" : "benit.jose@infosys.com",
+  "description" : "",
+  "displayName" : "OAuth2Authcode",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1648099951155,
+  "lastModifiedBy" : "benit.jose@infosys.com",
+  "name" : "OAuth2Authcode",
+  "proxies" : [ "OAuth2AuthorizationDemo4" ],
+  "scopes" : [ ]
+}

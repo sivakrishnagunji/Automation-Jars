@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1648015475100,
+  "createdBy" : "gobika.sakthivel@infosys.com",
+  "description" : "",
+  "displayName" : "TokenExchange",
+  "environments" : [ "dev", "test" ],
+  "lastModifiedAt" : 1648015475100,
+  "lastModifiedBy" : "gobika.sakthivel@infosys.com",
+  "name" : "TokenExchange",
+  "proxies" : [ "GenerateAccessToken", "Verify-Access-Token", "oAuth2TokenExchange" ],
+  "scopes" : [ ]
+}

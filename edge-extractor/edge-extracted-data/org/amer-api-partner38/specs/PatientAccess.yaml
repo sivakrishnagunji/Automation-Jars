@@ -1,0 +1,3871 @@
+openapi: 3.0.1
+info:
+  title: FHIR PATIENT ACCESS API
+  version: "1.0"
+  description: Test Description
+servers:
+- url: '{protocol}://{environment}'
+  variables:
+      protocol:
+        default: http
+        enum:
+          - http
+          - https
+      environment:
+        default: imapnext.com:5556/ihp/drug/formulary-ig/v1  # Sample Server
+        enum:
+          - api.dev     # Development Server
+          - api.test    # Test Server
+          - api.stage   # Staging Server 
+          - imapnext.com:5556/ihp/drug/formulary-ig/v1       # Sample FHIR Public Server
+#- url: //imapnext.com:5556/ihp/drug/formulary-ig/v1
+tags:
+- name: eob-controller
+  description: EOB Controller
+- name: medication-knowledge-controller
+  description: Medication Knowledge Controller
+- name: document-reference-controller
+  description: Document Reference Controller
+- name: encounter-controller
+  description: Encounter Controller
+- name: practitioner-role-controller
+  description: Practitioner Role Controller
+- name: medication-controller
+  description: Medication Controller
+- name: procedure-controller
+  description: Procedure Controller
+- name: patient-controller
+  description: Patient Controller
+- name: care-team-controller
+  description: Care Team Controller
+- name: valued-set-controller
+  description: Valued Set Controller
+- name: allergy-intolerance-controller
+  description: Allergy Intolerance Controller
+- name: structure-definition-controller
+  description: Structure Definition Controller
+- name: goal-controller
+  description: Goal Controller
+- name: practitioner-controller
+  description: Practitioner Controller
+- name: code-system-controller
+  description: Code System Controller
+- name: observation-controller
+  description: Observation Controller
+- name: diagnostic-report-controller
+  description: Diagnostic Report Controller
+- name: medication-request-controller
+  description: Medication Request Controller
+- name: condition-controller
+  description: Condition Controller
+- name: care-plan-controller
+  description: Care Plan Controller
+- name: organization-controller
+  description: Organization Controller
+- name: immunization-controller
+  description: Immunization Controller
+- name: location-controller
+  description: Location Controller
+- name: list-controller
+  description: List Controller
+- name: device-controller
+  description: Device Controller
+- name: coverage-controller
+  description: Coverage Controller
+paths:
+  /fhir/AllergyIntolerance:
+    get:
+      tags:
+      - allergy-intolerance-controller
+      summary: findAllAllergyIntolerance
+      operationId: findAllAllergyIntoleranceUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: severity
+        in: query
+        description: severity
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: manifestation
+        in: query
+        description: manifestation
+        schema:
+          type: string
+      - name: recorder
+        in: query
+        description: recorder
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: verification-status
+        in: query
+        description: verification-status
+        schema:
+          type: string
+      - name: criticality
+        in: query
+        description: criticality
+        schema:
+          type: string
+      - name: clinical-status
+        in: query
+        description: clinical-status
+        schema:
+          type: string
+      - name: onset
+        in: query
+        description: onset
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: type
+        schema:
+          type: string
+      - name: asserter
+        in: query
+        description: asserter
+        schema:
+          type: string
+      - name: route
+        in: query
+        description: route
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: last-date
+        in: query
+        description: last-date
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/CarePlan:
+    get:
+      tags:
+      - care-plan-controller
+      summary: findAllCarePlan
+      operationId: findAllCarePlanUsingGET_1
+      parameters:
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: care-team
+        in: query
+        description: care-team
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: goal
+        in: query
+        description: goal
+        schema:
+          type: string
+      - name: performer
+        in: query
+        description: performer
+        schema:
+          type: string
+      - name: replaces
+        in: query
+        description: replaces
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: instantiates-canonical
+        in: query
+        description: instantiates-canonical
+        schema:
+          type: string
+      - name: part-of
+        in: query
+        description: part-of
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: intent
+        in: query
+        description: intent
+        schema:
+          type: string
+      - name: activity-reference
+        in: query
+        description: activity-reference
+        schema:
+          type: string
+      - name: condition
+        in: query
+        description: condition
+        schema:
+          type: string
+      - name: based-on
+        in: query
+        description: based-on
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: activity-date
+        in: query
+        description: activity-date
+        schema:
+          type: string
+      - name: instantiates-uri
+        in: query
+        description: instantiates-uri
+        schema:
+          type: string
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: activity-code
+        in: query
+        description: activity-code
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/CarePlan/{id}:
+    get:
+      tags:
+      - care-plan-controller
+      summary: findCarePlanById
+      operationId: findCarePlanByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/CareTeam:
+    get:
+      tags:
+      - care-team-controller
+      summary: findAllCareTeam
+      operationId: findAllCareTeamUsingGET_1
+      parameters:
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: participant
+        in: query
+        description: participant
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/CareTeam/{id}:
+    get:
+      tags:
+      - care-team-controller
+      summary: findCareTeamById
+      operationId: findCareTeamByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/CodeSystem:
+    get:
+      tags:
+      - code-system-controller
+      summary: findAllCodeSystem
+      operationId: findAllCodeSystemUsingGET_1
+      parameters:
+      - name: language
+        in: query
+        schema:
+          type: string
+      - name: date
+        in: query
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        schema:
+          type: string
+      - name: code
+        in: query
+        schema:
+          type: string
+      - name: contextTypeValue
+        in: query
+        schema:
+          type: string
+      - name: contentMode
+        in: query
+        schema:
+          type: string
+      - name: jurisdiction
+        in: query
+        schema:
+          type: string
+      - name: contextType
+        in: query
+        schema:
+          type: string
+      - name: description
+        in: query
+        schema:
+          type: string
+      - name: title
+        in: query
+        schema:
+          type: string
+      - name: version
+        in: query
+        schema:
+          type: string
+      - name: url
+        in: query
+        schema:
+          type: string
+      - name: contextQuantity
+        in: query
+        schema:
+          type: string
+      - name: supplements
+        in: query
+        schema:
+          type: string
+      - name: system
+        in: query
+        schema:
+          type: string
+      - name: context
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: publisher
+        in: query
+        schema:
+          type: string
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: contextTypeQuantity
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/CodeSystem/{id}:
+    get:
+      tags:
+      - code-system-controller
+      summary: findCodeSystemById
+      operationId: findCodeSystemByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Condition:
+    get:
+      tags:
+      - condition-controller
+      summary: findAllCondition
+      operationId: findAllConditionUsingGET_1
+      parameters:
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: evidence-detail
+        in: query
+        description: evidence-detail
+        schema:
+          type: string
+      - name: severity
+        in: query
+        description: severity
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: onset-info
+        in: query
+        description: onset-info
+        schema:
+          type: string
+      - name: recorded-date
+        in: query
+        description: recorded-date
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: evidence
+        in: query
+        description: evidence
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: verification-status
+        in: query
+        description: verification-status
+        schema:
+          type: string
+      - name: clinical-status
+        in: query
+        description: clinical-status
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: onset-date
+        in: query
+        description: onset-date
+        schema:
+          type: string
+      - name: abatement-date
+        in: query
+        description: abatement-date
+        schema:
+          type: string
+      - name: asserter
+        in: query
+        description: asserter
+        schema:
+          type: string
+      - name: stage
+        in: query
+        description: stage
+        schema:
+          type: string
+      - name: abatement-string
+        in: query
+        description: abatement-string
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: abatement-age
+        in: query
+        description: abatement-age
+        schema:
+          type: string
+      - name: onset-age
+        in: query
+        description: onset-age
+        schema:
+          type: string
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: body-site
+        in: query
+        description: body-site
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Condition/{id}:
+    get:
+      tags:
+      - condition-controller
+      summary: findConditionById
+      operationId: findConditionByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Coverage:
+    get:
+      tags:
+      - coverage-controller
+      summary: findAllCoverage
+      operationId: findAllCoverageUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: subscriber
+        in: query
+        description: subscriber
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: type
+        schema:
+          type: string
+      - name: payor
+        in: query
+        description: payor
+        schema:
+          type: string
+      - name: beneficiary
+        in: query
+        description: beneficiary
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: class-value
+        in: query
+        description: class-value
+        schema:
+          type: string
+      - name: class-type
+        in: query
+        description: class-type
+        schema:
+          type: string
+      - name: dependent
+        in: query
+        description: dependent
+        schema:
+          type: string
+      - name: policy-holder
+        in: query
+        description: policy-holder
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Coverage/{id}:
+    get:
+      tags:
+      - coverage-controller
+      summary: findCoverageById
+      operationId: findCoverageByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Device:
+    get:
+      tags:
+      - device-controller
+      summary: findAllDevice
+      operationId: findAllDeviceUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: udi-di
+        in: query
+        description: udi-di
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: udi-carrier
+        in: query
+        description: udi-carrier
+        schema:
+          type: string
+      - name: device-name
+        in: query
+        description: device-name
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: type
+        schema:
+          type: string
+      - name: url
+        in: query
+        description: url
+        schema:
+          type: string
+      - name: manufacturer
+        in: query
+        description: manufacturer
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: organization
+        in: query
+        description: organization
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: model
+        in: query
+        description: model
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/DiagnosticReport:
+    get:
+      tags:
+      - diagnostic-report-controller
+      summary: findAllDiagnosticReport
+      operationId: findAllDiagnosticReportUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: performer
+        in: query
+        description: performer
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: media
+        in: query
+        description: media
+        schema:
+          type: string
+      - name: conclusion
+        in: query
+        description: conclusion
+        schema:
+          type: string
+      - name: result
+        in: query
+        description: result
+        schema:
+          type: string
+      - name: based-on
+        in: query
+        description: based-on
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: specimen
+        in: query
+        description: specimen
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: issued
+        in: query
+        description: issued
+        schema:
+          type: string
+      - name: results-interpreter
+        in: query
+        description: results-interpreter
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/DocumentReference:
+    get:
+      tags:
+      - document-reference-controller
+      summary: findAllDocumentReference
+      operationId: findAllDocumentReferenceUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: description
+        in: query
+        description: description
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: language
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: type
+        schema:
+          type: string
+      - name: relation
+        in: query
+        description: relation
+        schema:
+          type: string
+      - name: setting
+        in: query
+        description: setting
+        schema:
+          type: string
+      - name: related
+        in: query
+        description: related
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: event
+        in: query
+        description: event
+        schema:
+          type: string
+      - name: relationship
+        in: query
+        description: relationship
+        schema:
+          type: string
+      - name: authenticator
+        in: query
+        description: authenticator
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: period
+        in: query
+        description: period
+        schema:
+          type: string
+      - name: custodian
+        in: query
+        description: custodian
+        schema:
+          type: string
+      - name: author
+        in: query
+        description: author
+        schema:
+          type: string
+      - name: format
+        in: query
+        description: format
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: contenttype
+        in: query
+        description: contenttype
+        schema:
+          type: string
+      - name: securityLabel
+        in: query
+        description: securityLabel
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: relatesto
+        in: query
+        description: relatesto
+        schema:
+          type: string
+      - name: facility
+        in: query
+        description: facility
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Encounter:
+    get:
+      tags:
+      - encounter-controller
+      summary: findAllEncounter
+      operationId: findAllEncounterUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: participant-type
+        in: query
+        description: participant-type
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: appointment
+        in: query
+        description: appointment
+        schema:
+          type: string
+      - name: part-of
+        in: query
+        description: part-of
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: type
+        schema:
+          type: string
+      - name: participant
+        in: query
+        description: participant
+        schema:
+          type: string
+      - name: reason-code
+        in: query
+        description: reason-code
+        schema:
+          type: string
+      - name: based-on
+        in: query
+        description: based-on
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: location-period
+        in: query
+        description: location-period
+        schema:
+          type: string
+      - name: special-arrangement
+        in: query
+        description: special-arrangement
+        schema:
+          type: string
+      - name: class
+        in: query
+        description: class
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: practitioner
+        in: query
+        description: practitioner
+        schema:
+          type: string
+      - name: episode-of-care
+        in: query
+        description: episode-of-care
+        schema:
+          type: string
+      - name: length
+        in: query
+        description: length
+        schema:
+          type: string
+      - name: reason-reference
+        in: query
+        description: reason-reference
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: service-provider
+        in: query
+        description: service-provider
+        schema:
+          type: string
+      - name: account
+        in: query
+        description: account
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Goal:
+    get:
+      tags:
+      - goal-controller
+      summary: findAllGoal
+      operationId: findAllGoalUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: start-date
+        in: query
+        description: start-date
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: target-date
+        in: query
+        description: target-date
+        schema:
+          type: string
+      - name: achivement-status
+        in: query
+        description: achivement-status
+        schema:
+          type: string
+      - name: lifecycle-status
+        in: query
+        description: lifecycle-status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Immunization:
+    get:
+      tags:
+      - immunization-controller
+      summary: findAllImmunization
+      operationId: findAllImmunizationUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: performer
+        in: query
+        description: performer
+        schema:
+          type: string
+      - name: reaction
+        in: query
+        description: reaction
+        schema:
+          type: string
+      - name: lot-number
+        in: query
+        description: lot-number
+        schema:
+          type: string
+      - name: status-reason
+        in: query
+        description: status-reason
+        schema:
+          type: string
+      - name: reason-code
+        in: query
+        description: reason-code
+        schema:
+          type: string
+      - name: manufacturer
+        in: query
+        description: manufacturer
+        schema:
+          type: string
+      - name: target-disease
+        in: query
+        description: target-disease
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: series
+        in: query
+        description: series
+        schema:
+          type: string
+      - name: vaccine-code
+        in: query
+        description: vaccine-code
+        schema:
+          type: string
+      - name: reason-reference
+        in: query
+        description: reason-reference
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: reaction-date
+        in: query
+        description: reaction-date
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/List:
+    get:
+      tags:
+      - list-controller
+      summary: findAllCoveragePlan
+      operationId: findAllCoveragePlanUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: empty-reason
+        in: query
+        description: empty-reason
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: item
+        in: query
+        description: item
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: notes
+        in: query
+        description: notes
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: source
+        in: query
+        description: source
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: title
+        in: query
+        description: title
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/List/{id}:
+    get:
+      tags:
+      - list-controller
+      summary: findCoveragePlanById
+      operationId: findCoveragePlanByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Location:
+    get:
+      tags:
+      - location-controller
+      summary: findAllLocation
+      operationId: findAllLocationUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: partof
+        in: query
+        description: partof
+        schema:
+          type: string
+      - name: address
+        in: query
+        description: address
+        schema:
+          type: string
+      - name: address-state
+        in: query
+        description: address-state
+        schema:
+          type: string
+      - name: operational-status
+        in: query
+        description: operational-status
+        schema:
+          type: string
+      - name: address-postalcode
+        in: query
+        description: address-postalcode
+        schema:
+          type: string
+      - name: address-country
+        in: query
+        description: address-country
+        schema:
+          type: string
+      - name: endpoint
+        in: query
+        description: endpoint
+        schema:
+          type: string
+      - name: organization
+        in: query
+        description: organization
+        schema:
+          type: string
+      - name: address-use
+        in: query
+        description: address-use
+        schema:
+          type: string
+      - name: near
+        in: query
+        description: near
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: name
+        schema:
+          type: string
+      - name: address-city
+        in: query
+        description: address-city
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Medication:
+    get:
+      tags:
+      - medication-controller
+      summary: findAllMedication
+      operationId: findAllMedicationUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: ingredient-code
+        in: query
+        description: ingredient-code
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: ingredient
+        in: query
+        description: ingredient
+        schema:
+          type: string
+      - name: form
+        in: query
+        description: form
+        schema:
+          type: string
+      - name: lot-number
+        in: query
+        description: lot-number
+        schema:
+          type: string
+      - name: expiration-date
+        in: query
+        description: expiration-date
+        schema:
+          type: string
+      - name: manufacturer
+        in: query
+        description: manufacturer
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/MedicationKnowledge:
+    get:
+      tags:
+      - medication-knowledge-controller
+      summary: findAllMedicationKnowledgePlan
+      operationId: findAllMedicationKnowledgePlanUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: ingredient
+        in: query
+        description: ingredient
+        schema:
+          type: string
+      - name: doseform
+        in: query
+        description: doseform
+        schema:
+          type: string
+      - name: classification-type
+        in: query
+        description: classification-type
+        schema:
+          type: string
+      - name: monograph-type
+        in: query
+        description: monograph-type
+        schema:
+          type: string
+      - name: classification
+        in: query
+        description: classification
+        schema:
+          type: string
+      - name: manufacturer
+        in: query
+        description: manufacturer
+        schema:
+          type: string
+      - name: ingredient-code
+        in: query
+        description: ingredient-code
+        schema:
+          type: string
+      - name: source-cost
+        in: query
+        description: source-cost
+        schema:
+          type: string
+      - name: monitoring-program-name
+        in: query
+        description: monitoring-program-name
+        schema:
+          type: string
+      - name: monograph
+        in: query
+        description: monograph
+        schema:
+          type: string
+      - name: monitoring-program-type
+        in: query
+        description: monitoring-program-type
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: DrugPlan
+        in: query
+        description: DrugPlan
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      - name: _getpages
+        in: query
+        description: _getpages
+        schema:
+          type: string
+      - name: _getpagesoffset
+        in: query
+        description: _getpagesoffset
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: _count
+        in: query
+        description: _count
+        schema:
+          type: integer
+          format: int32
+          default: 20
+      - name: _bundletype
+        in: query
+        description: _bundletype
+        schema:
+          type: string
+          default: searchset
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/MedicationKnowledge/{id}:
+    get:
+      tags:
+      - medication-knowledge-controller
+      summary: findMedicationKnowledgeById
+      operationId: findMedicationKnowledgeByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/MedicationRequest:
+    get:
+      tags:
+      - medication-request-controller
+      summary: findAllMedicationRequest
+      operationId: findAllMedicationRequestUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: requester
+        in: query
+        description: requester
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: intended-dispenser
+        in: query
+        description: intended-dispenser
+        schema:
+          type: string
+      - name: authoredon
+        in: query
+        description: authoredon
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: medication
+        in: query
+        description: medication
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: priority
+        in: query
+        description: priority
+        schema:
+          type: string
+      - name: intent
+        in: query
+        description: intent
+        schema:
+          type: string
+      - name: intended-performer
+        in: query
+        description: intended-performer
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: intended-performertype
+        in: query
+        description: intended-performertype
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Observation:
+    get:
+      tags:
+      - observation-controller
+      summary: findAllObservation
+      operationId: findAllObservationUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: combo-data-absent-reason
+        in: query
+        description: combo-data-absent-reason
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: combo-code-value-quantity
+        in: query
+        description: combo-code-value-quantity
+        schema:
+          type: string
+      - name: component-data-absent-reason
+        in: query
+        description: component-data-absent-reason
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: value-concept
+        in: query
+        description: value-concept
+        schema:
+          type: string
+      - name: value-date
+        in: query
+        description: value-date
+        schema:
+          type: string
+      - name: derived-from
+        in: query
+        description: derived-from
+        schema:
+          type: string
+      - name: focous
+        in: query
+        description: focous
+        schema:
+          type: string
+      - name: part-of
+        in: query
+        description: part-of
+        schema:
+          type: string
+      - name: has-member
+        in: query
+        description: has-member
+        schema:
+          type: string
+      - name: code-value-string
+        in: query
+        description: code-value-string
+        schema:
+          type: string
+      - name: component-code-value-quantity
+        in: query
+        description: component-code-value-quantity
+        schema:
+          type: string
+      - name: based-on
+        in: query
+        description: based-on
+        schema:
+          type: string
+      - name: code-value-date
+        in: query
+        description: code-value-date
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: specimen
+        in: query
+        description: specimen
+        schema:
+          type: string
+      - name: code-value-quantity
+        in: query
+        description: code-value-quantity
+        schema:
+          type: string
+      - name: component-code
+        in: query
+        description: component-code
+        schema:
+          type: string
+      - name: combo-code-value-concept
+        in: query
+        description: combo-code-value-concept
+        schema:
+          type: string
+      - name: value-string
+        in: query
+        description: value-string
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: performer
+        in: query
+        description: performer
+        schema:
+          type: string
+      - name: combo-code
+        in: query
+        description: combo-code
+        schema:
+          type: string
+      - name: method
+        in: query
+        description: method
+        schema:
+          type: string
+      - name: value-quantity
+        in: query
+        description: value-quantity
+        schema:
+          type: string
+      - name: component-value-quantity
+        in: query
+        description: component-value-quantity
+        schema:
+          type: string
+      - name: data-absent-reason
+        in: query
+        description: data-absent-reason
+        schema:
+          type: string
+      - name: combo-value-quantity
+        in: query
+        description: combo-value-quantity
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: code-value-concept
+        in: query
+        description: code-value-concept
+        schema:
+          type: string
+      - name: component-code-value-concept
+        in: query
+        description: component-code-value-concept
+        schema:
+          type: string
+      - name: component-value-concept
+        in: query
+        description: component-value-concept
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: device
+        in: query
+        description: device
+        schema:
+          type: string
+      - name: combo-value-concept
+        in: query
+        description: combo-value-concept
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Organization:
+    get:
+      tags:
+      - organization-controller
+      summary: findAllOrganization
+      operationId: findAllOrganizationUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: partOf
+        in: query
+        description: partOf
+        schema:
+          type: string
+      - name: address
+        in: query
+        description: address
+        schema:
+          type: string
+      - name: address-state
+        in: query
+        description: address-state
+        schema:
+          type: string
+      - name: active
+        in: query
+        description: active
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: type
+        schema:
+          type: string
+      - name: address-postalCode
+        in: query
+        description: address-postalCode
+        schema:
+          type: string
+      - name: address-country
+        in: query
+        description: address-country
+        schema:
+          type: string
+      - name: endpoint
+        in: query
+        description: endpoint
+        schema:
+          type: string
+      - name: phonetic
+        in: query
+        description: phonetic
+        schema:
+          type: string
+      - name: addressUse
+        in: query
+        description: addressUse
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: name
+        schema:
+          type: string
+      - name: address-city
+        in: query
+        description: address-city
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Patient:
+    get:
+      tags:
+      - patient-controller
+      summary: findAllPatient
+      operationId: findAllPatientUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: birthdate
+        in: query
+        description: birthdate
+        schema:
+          type: string
+      - name: deceased
+        in: query
+        description: deceased
+        schema:
+          type: string
+      - name: address-state
+        in: query
+        description: address-state
+        schema:
+          type: string
+      - name: gender
+        in: query
+        description: gender
+        schema:
+          type: string
+      - name: link
+        in: query
+        description: link
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: language
+        schema:
+          type: string
+      - name: address-country
+        in: query
+        description: address-country
+        schema:
+          type: string
+      - name: death-date
+        in: query
+        description: death-date
+        schema:
+          type: string
+      - name: phonetic
+        in: query
+        description: phonetic
+        schema:
+          type: string
+      - name: telecom
+        in: query
+        description: telecom
+        schema:
+          type: string
+      - name: address-city
+        in: query
+        description: address-city
+        schema:
+          type: string
+      - name: email
+        in: query
+        description: email
+        schema:
+          type: string
+      - name: given
+        in: query
+        description: given
+        schema:
+          type: string
+      - name: address
+        in: query
+        description: address
+        schema:
+          type: string
+      - name: active
+        in: query
+        description: active
+        schema:
+          type: string
+      - name: address-postalCode
+        in: query
+        description: address-postalCode
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: phone
+        schema:
+          type: string
+      - name: organization
+        in: query
+        description: organization
+        schema:
+          type: string
+      - name: address-use
+        in: query
+        description: address-use
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: name
+        schema:
+          type: string
+      - name: family
+        in: query
+        description: family
+        schema:
+          type: string
+      - name: general-practitioner
+        in: query
+        description: general-practitioner
+        schema:
+          type: string
+      - name: _getpages
+        in: query
+        description: _getpages
+        schema:
+          type: string
+      - name: _getpagesoffset
+        in: query
+        description: _getpagesoffset
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: _count
+        in: query
+        description: _count
+        schema:
+          type: integer
+          format: int32
+          default: 20
+      - name: _bundletype
+        in: query
+        description: _bundletype
+        schema:
+          type: string
+          default: searchset
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Practitioner:
+    get:
+      tags:
+      - practitioner-controller
+      summary: findAllPractioner
+      operationId: findAllPractionerUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: given
+        in: query
+        description: given
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: address
+        in: query
+        description: address
+        schema:
+          type: string
+      - name: address-state
+        in: query
+        description: address-state
+        schema:
+          type: string
+      - name: gender
+        in: query
+        description: gender
+        schema:
+          type: string
+      - name: active
+        in: query
+        description: active
+        schema:
+          type: string
+      - name: address-city
+        in: query
+        description: address-city
+        schema:
+          type: string
+      - name: address-postalCode
+        in: query
+        description: address-postalCode
+        schema:
+          type: string
+      - name: phonetic
+        in: query
+        description: phonetic
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: phone
+        schema:
+          type: string
+      - name: address-country
+        in: query
+        description: address-country
+        schema:
+          type: string
+      - name: address-use
+        in: query
+        description: address-use
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: name
+        schema:
+          type: string
+      - name: telecom
+        in: query
+        description: telecom
+        schema:
+          type: string
+      - name: communication
+        in: query
+        description: communication
+        schema:
+          type: string
+      - name: family
+        in: query
+        description: family
+        schema:
+          type: string
+      - name: email
+        in: query
+        description: email
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/PractitionerRole:
+    get:
+      tags:
+      - practitioner-role-controller
+      summary: findAllPractionerRole
+      operationId: findAllPractionerRoleUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: specialty
+        in: query
+        description: specialty
+        schema:
+          type: string
+      - name: role
+        in: query
+        description: role
+        schema:
+          type: string
+      - name: practitioner
+        in: query
+        description: practitioner
+        schema:
+          type: string
+      - name: active
+        in: query
+        description: active
+        schema:
+          type: string
+      - name: endpoint
+        in: query
+        description: endpoint
+        schema:
+          type: string
+      - name: service
+        in: query
+        description: service
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: phone
+        schema:
+          type: string
+      - name: organization
+        in: query
+        description: organization
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: telecom
+        in: query
+        description: telecom
+        schema:
+          type: string
+      - name: email
+        in: query
+        description: email
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Procedure:
+    get:
+      tags:
+      - procedure-controller
+      summary: findAllProcedure
+      operationId: findAllProcedureUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: date
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: code
+        schema:
+          type: string
+      - name: performer
+        in: query
+        description: performer
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: subject
+        schema:
+          type: string
+      - name: instatiates-canonical
+        in: query
+        description: instatiates-canonical
+        schema:
+          type: string
+      - name: part-of
+        in: query
+        description: part-of
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: reason-code
+        in: query
+        description: reason-code
+        schema:
+          type: string
+      - name: based-on
+        in: query
+        description: based-on
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: reason-reference
+        in: query
+        description: reason-reference
+        schema:
+          type: string
+      - name: instantiates-uri
+        in: query
+        description: instantiates-uri
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/StructureDefinition:
+    get:
+      tags:
+      - structure-definition-controller
+      summary: findAllExtension
+      operationId: findAllExtensionUsingGET_1
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: resourceType
+        in: query
+        schema:
+          type: string
+      - name: text
+        in: query
+        schema:
+          type: string
+      - name: url
+        in: query
+        schema:
+          type: string
+      - name: version
+        in: query
+        schema:
+          type: string
+      - name: total
+        in: query
+        schema:
+          type: string
+      - name: abstractText
+        in: query
+        schema:
+          type: boolean
+      - name: fhirversion
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: title
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          type: string
+      - name: date
+        in: query
+        schema:
+          type: string
+      - name: meta
+        in: query
+        schema:
+          type: string
+      - name: publisher
+        in: query
+        schema:
+          type: string
+      - name: description
+        in: query
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      - name: mapping
+        in: query
+        schema:
+          type: string
+      - name: kind
+        in: query
+        schema:
+          type: string
+      - name: basedefination
+        in: query
+        schema:
+          type: string
+      - name: derivation
+        in: query
+        schema:
+          type: string
+      - name: snapshot
+        in: query
+        schema:
+          type: string
+      - name: differential
+        in: query
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/ValueSet:
+    get:
+      tags:
+      - valued-set-controller
+      summary: SearchValueSet
+      operationId: SearchValueSetUsingGET_1
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: language
+        in: query
+        schema:
+          type: string
+      - name: date
+        in: query
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        schema:
+          type: string
+      - name: code
+        in: query
+        schema:
+          type: string
+      - name: contextTypeValue
+        in: query
+        schema:
+          type: string
+      - name: jurisdiction
+        in: query
+        schema:
+          type: string
+      - name: discription
+        in: query
+        schema:
+          type: string
+      - name: contextType
+        in: query
+        schema:
+          type: string
+      - name: title
+        in: query
+        schema:
+          type: string
+      - name: version
+        in: query
+        schema:
+          type: string
+      - name: url
+        in: query
+        schema:
+          type: string
+      - name: expansion
+        in: query
+        schema:
+          type: string
+      - name: reference
+        in: query
+        schema:
+          type: string
+      - name: contextQuantity
+        in: query
+        schema:
+          type: string
+      - name: context
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: publisher
+        in: query
+        schema:
+          type: string
+      - name: contextTypeQuantity
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/ValueSet/id:
+    get:
+      tags:
+      - valued-set-controller
+      summary: findValueSetById
+      operationId: findValueSetByIdUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/eob:
+    get:
+      tags:
+      - eob-controller
+      summary: findAllEOB
+      operationId: findAllEOBUsingGET_1
+      parameters:
+      - name: _id
+        in: query
+        description: _id
+        schema:
+          type: string
+      - name: _language
+        in: query
+        description: _language
+        schema:
+          type: string
+      - name: care-team
+        in: query
+        description: care-team
+        schema:
+          type: string
+      - name: coverage
+        in: query
+        description: coverage
+        schema:
+          type: string
+      - name: identifier
+        in: query
+        description: identifier
+        schema:
+          type: string
+      - name: created
+        in: query
+        description: created
+        schema:
+          type: string
+      - name: encounter
+        in: query
+        description: encounter
+        schema:
+          type: string
+      - name: payee
+        in: query
+        description: payee
+        schema:
+          type: string
+      - name: disposition
+        in: query
+        description: disposition
+        schema:
+          type: string
+      - name: provider
+        in: query
+        description: provider
+        schema:
+          type: string
+      - name: patient
+        in: query
+        description: patient
+        schema:
+          type: string
+      - name: details-udi
+        in: query
+        description: details-udi
+        schema:
+          type: string
+      - name: claim
+        in: query
+        description: claim
+        schema:
+          type: string
+      - name: enterer
+        in: query
+        description: enterer
+        schema:
+          type: string
+      - name: procedure-udi
+        in: query
+        description: procedure-udi
+        schema:
+          type: string
+      - name: subdetails-udi
+        in: query
+        description: subdetails-udi
+        schema:
+          type: string
+      - name: facility
+        in: query
+        description: facility
+        schema:
+          type: string
+      - name: item-udi
+        in: query
+        description: item-udi
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/eob/{id}:
+    get:
+      tags:
+      - eob-controller
+      summary: findEOBById
+      operationId: findEOBByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}

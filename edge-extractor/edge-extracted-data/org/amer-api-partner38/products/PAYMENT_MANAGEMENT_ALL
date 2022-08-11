@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "**", "/**" ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1608805159035,
+  "createdBy" : "merin_jose01@infosys.com",
+  "description" : "Allows the consumer to access all resources of this API",
+  "displayName" : "PAYMENT_MANAGEMENT_ALL",
+  "environments" : [ "test" ],
+  "lastModifiedAt" : 1620291578161,
+  "lastModifiedBy" : "merin_jose01@infosys.com",
+  "name" : "PAYMENT_MANAGEMENT_ALL",
+  "proxies" : [ "OAuth2ClientCredentials", "PaymentManagement" ],
+  "scopes" : [ ]
+}

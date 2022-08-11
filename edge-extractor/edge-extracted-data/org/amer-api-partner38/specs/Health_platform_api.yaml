@@ -1,0 +1,393 @@
+openapi: 3.0.1
+info:
+  title: All API
+  version: "1.0"
+servers:
+- url: '{protocol}://{environment}'
+  variables:
+      protocol:
+        default: http
+        enum:
+          - http
+          - https
+      environment:
+        default: imapnext.com:5556/ihp/drug/formulary-ig/v1  # Sample Server
+        enum:
+          - api.dev     # Development Server
+          - api.test    # Test Server
+          - api.stage   # Staging Server 
+          - imapnext.com:5556/ihp/drug/formulary-ig/v1       # Sample FHIR Public Server
+#- url: //imapnext.com:5556/ihp/drug/formulary-ig/v1
+tags:
+- name: api-metrics-controller
+  description: Api Metrics Controller
+paths:
+  /fhir/ApiMetrics/PatientAccess/search/{apiType}:
+    get:
+      tags:
+      - api-metrics-controller
+      summary: searchApiResourcePerformance
+      operationId: searchApiResourcePerformanceUsingGET_2
+      parameters:
+      - name: apiType
+        in: path
+        description: apiType
+        required: true
+        schema:
+          type: string
+      - name: searchText
+        in: query
+        description: searchText
+        schema:
+          type: string
+      - name: requestMethod
+        in: query
+        description: requestMethod
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        description: fromDate
+        required: true
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        description: toDate
+        required: true
+        schema:
+          type: string
+      - name: from
+        in: query
+        description: from
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: size
+        in: query
+        description: size
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/ApiMetrics/PatientAccess/{apiType}:
+    get:
+      tags:
+      - api-metrics-controller
+      summary: getApiResourcePerformance
+      operationId: getApiResourcePerformanceUsingGET_2
+      parameters:
+      - name: apiType
+        in: path
+        description: apiType
+        required: true
+        schema:
+          type: string
+      - name: requestMethod
+        in: query
+        description: requestMethod
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        description: fromDate
+        required: true
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        description: toDate
+        required: true
+        schema:
+          type: string
+      - name: from
+        in: query
+        description: from
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: size
+        in: query
+        description: size
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/ApiMetrics/ProviderAccess/search/{apiType}:
+    get:
+      tags:
+      - api-metrics-controller
+      summary: searchApiResourcePerformance
+      operationId: searchApiResourcePerformanceUsingGET_3
+      parameters:
+      - name: apiType
+        in: path
+        description: apiType
+        required: true
+        schema:
+          type: string
+      - name: searchText
+        in: query
+        description: searchText
+        schema:
+          type: string
+      - name: requestMethod
+        in: query
+        description: requestMethod
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        description: fromDate
+        required: true
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        description: toDate
+        required: true
+        schema:
+          type: string
+      - name: from
+        in: query
+        description: from
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: size
+        in: query
+        description: size
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/ApiMetrics/ProviderAccess/{apiType}:
+    get:
+      tags:
+      - api-metrics-controller
+      summary: getApiResourcePerformance
+      operationId: getApiResourcePerformanceUsingGET_3
+      parameters:
+      - name: apiType
+        in: path
+        description: apiType
+        required: true
+        schema:
+          type: string
+      - name: requestMethod
+        in: query
+        description: requestMethod
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        description: fromDate
+        required: true
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        description: toDate
+        required: true
+        schema:
+          type: string
+      - name: from
+        in: query
+        description: from
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: size
+        in: query
+        description: size
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/ApiMetrics/mostSearchedApis:
+    get:
+      tags:
+      - api-metrics-controller
+      summary: getMostSearchedApis
+      operationId: getMostSearchedApisUsingGET_1
+      parameters:
+      - name: requestMethod
+        in: query
+        description: requestMethod
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        description: fromDate
+        required: true
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        description: toDate
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/ApiMetrics/performance:
+    get:
+      tags:
+      - api-metrics-controller
+      summary: performance
+      operationId: performanceUsingGET_1
+      parameters:
+      - name: requestUrl
+        in: query
+        description: requestUrl
+        schema:
+          type: string
+          default: fhir
+      - name: requestMethod
+        in: query
+        description: requestMethod
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        description: fromDate
+        required: true
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        description: toDate
+        required: true
+        schema:
+          type: string
+      - name: from
+        in: query
+        description: from
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: size
+        in: query
+        description: size
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+

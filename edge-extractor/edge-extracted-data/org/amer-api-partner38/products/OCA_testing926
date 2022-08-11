@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "/" ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1658750530140,
+  "createdBy" : "madhuri.munnelli@infosys.com",
+  "description" : "Test",
+  "displayName" : "Testing926",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1658750531268,
+  "lastModifiedBy" : "madhuri.munnelli@infosys.com",
+  "name" : "OCA_testing926",
+  "proxies" : [ ],
+  "scopes" : [ ]
+}

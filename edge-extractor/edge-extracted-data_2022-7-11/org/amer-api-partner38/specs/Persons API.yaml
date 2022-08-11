@@ -1,0 +1,145 @@
+# Example OpenAPI YAML to get you started quickly.
+# Note: YAML has indentation based coping.
+# Code completion support is available so start typing for
+# available options.
+# This example follows the recommendations of the API 
+# Improvement Proposals for common API patterns. Find more
+# at https://google.aip.dev/
+
+# Find the full OpenAPI reference at:
+# https://github.com/OAI/OpenAPI-Specification
+openapi: 3.0.1
+
+# This is your document metadata.
+info:
+  version: 0.0.1
+  title: Persons API
+  description: |
+    This is sample Persons API.
+
+    This API follows the recommendations of the
+    [API Improvement Proposals](https://google.aip.dev/).
+
+# Servers where this API is hosted
+servers: 
+  - url: https://api.example.com
+
+# Describe your paths here
+paths:
+  # This is a endpoint path.
+  '/persons':
+    # This is an HTTP operation
+    post:
+      # Describe this verb here. Note: you can use markdown
+      summary: 'List `Person` objects.'
+      description: |
+        Retrieve a page of `Person` objects from the server. 
+        Follows the standards for parameters from the
+        [List AIP](  https://aip.dev/132).
+      # This is an array of GET operation parameters:
+      parameters:
+        # An example parameter that is in query and is required
+        - name: pageSize
+          in: query
+          description: |
+            Max size of returned list. 
+          schema:
+            type: integer
+            default: 25
+        - name: pageToken
+          in: query
+          description: |
+            A page token recieved from the previous list call.
+            Provide this to retrieve the next page.
+          schema:
+            type: string
+        - name: orderBy
+          in: query
+          description: |
+            The ordering of the returned list. See the
+            [List Ordering AIP](  https://aip.dev/132) for 
+            details on the formatting of this field.
+          schema:
+            type: string
+            default: 'displayName'
+        - name: filter
+          in: query
+          description: |
+            Filter that will be used to select Person objects to
+            return. See the [Filtering AIP](https://aip.dev/160)
+            for usage and details on the filtering grammar.
+          schema:
+            type: string
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        '200':
+          description: Successful response
+          # Response body content.
+          content:
+            # JSON response with a schema referenced from the  
+            # components object.
+            application/json:
+              schema:
+                type: object
+                properties:
+                  persons:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ListOfPersons'
+                  nextPageToken:
+                    description: |
+                      A token which can be sent as `pageToken`
+                      to retrieve the next page.
+                    type: string
+  '/persons/{person}':
+    get:
+      description: 'Retrieve a single Person object.'
+      parameters:
+        - name: person
+          in: path
+          description: |
+            Unique identifier of the desired person object.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        '404':
+          description: 'Person was not found'
+
+# Reusable components of your API belong here. Utilize
+# components with JSON references.
+components:
+  # Schemas is a map of names to Schema objects
+  schemas:
+    # A list of Person objects
+    ListOfPersons:
+      title: List of Persons
+      type: array
+      items:
+        $ref: '#/components/schemas/Person'
+    # A single person object
+    Person:
+      title: Person
+      type: object
+      properties:
+        name:
+          description: |
+            [Resource Name](https://aip.dev/122) of a person.
+            Format: `persons/{personId}`
+          type: string
+          example: "persons/a353-x51d"
+          pattern: 'persons\/[a-z0-9-]+'
+        displayName:
+          description: 'Display name of a person.'
+          type: string
+          example: "ApiPerson84"
+        subscribed:
+          description: 'Subscription state of a person'
+          type: boolean

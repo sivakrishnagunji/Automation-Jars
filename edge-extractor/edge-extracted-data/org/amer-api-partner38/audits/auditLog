@@ -1,0 +1,456 @@
+{
+  "auditRecord" : [ {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/demo",
+    "responseCode" : "200",
+    "timeStamp" : 1659820739548,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/demo','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659819753006,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/demo/?name=demo&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659819749510,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/mt-user1/revisions/1/debugsessions/1659819646675",
+    "responseCode" : "403",
+    "timeStamp" : 1659819668312,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/mt-user1/revisions/1/debugsessions/1659819646675/?session=1659819646675&timeout=600",
+    "responseCode" : "201",
+    "timeStamp" : 1659819648481,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/mt-user1/revisions/1/debugsessions/1659814478548",
+    "responseCode" : "403",
+    "timeStamp" : 1659814592482,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/mt-user1/revisions/1/debugsessions/1659814478548/?session=1659814478548&timeout=600",
+    "responseCode" : "201",
+    "timeStamp" : 1659814480404,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/Persons-API/revisions/1/deployments",
+    "responseCode" : "200",
+    "timeStamp" : 1659630772395,
+    "user" : "prasannaraman_b@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/Persons-API','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659630764679,
+    "user" : "prasannaraman_b@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/Persons-API/?name=Persons-API&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659630761928,
+    "user" : "prasannaraman_b@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''manisha.chennu@infosys.com''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/users",
+    "responseCode" : "200",
+    "timeStamp" : 1659614878048,
+    "user" : "shrenikkumar_s@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''pasupuleti.gayathri@infosys.com''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/users",
+    "responseCode" : "200",
+    "timeStamp" : 1659614861393,
+    "user" : "shrenikkumar_s@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''prasannaraman_b@infosys.com''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/users",
+    "responseCode" : "200",
+    "timeStamp" : 1659614848061,
+    "user" : "shrenikkumar_s@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/e/dev/apis/demo-proxy/revisions/1/deployments",
+    "responseCode" : "200",
+    "timeStamp" : 1659429205180,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/demo-proxy/?name=demo-proxy&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659429181507,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/mock-test",
+    "responseCode" : "200",
+    "timeStamp" : 1659429125186,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/e/dev/apis/mock-test/revisions/1/deployments",
+    "responseCode" : "200",
+    "timeStamp" : 1659429124199,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/e/dev/apis/mock-test/revisions/1/deployments",
+    "responseCode" : "200",
+    "timeStamp" : 1659428980796,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/mock-test/?name=mock-test&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659428951078,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/mock-test",
+    "responseCode" : "200",
+    "timeStamp" : 1659428889845,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/mock-test','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659428842085,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/mock-test/?name=mock-test&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659428838921,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/demo-proxy",
+    "responseCode" : "200",
+    "timeStamp" : 1659428542605,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/demo-proxy/?name=demo-proxy&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659428517555,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/demo-proxy",
+    "responseCode" : "200",
+    "timeStamp" : 1659428325206,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/demo-proxy','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659428051129,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/demo-proxy/?name=demo-proxy&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659428048551,
+    "user" : "peeyush.singhai@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User/?name=MT-User&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659338544764,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User",
+    "responseCode" : "200",
+    "timeStamp" : 1659338481404,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/mt-user1/revisions/1/deployments",
+    "responseCode" : "200",
+    "timeStamp" : 1659338406734,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/mt-user1','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659338398882,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/mt-user1/?name=mt-user1&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659338396311,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/MT-User/revisions/1/deployments",
+    "responseCode" : "400",
+    "timeStamp" : 1659328116254,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User/?name=MT-User&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659328112574,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User",
+    "responseCode" : "200",
+    "timeStamp" : 1659328071914,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User/?name=MT-User&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659328014881,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User",
+    "responseCode" : "200",
+    "timeStamp" : 1659327932257,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User/?name=MT-User&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659294536009,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User",
+    "responseCode" : "200",
+    "timeStamp" : 1659294443981,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/MT-User','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659293847109,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/MT-User/?name=MT-User&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659293844570,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/getstarted",
+    "responseCode" : "200",
+    "timeStamp" : 1659293790058,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/getstarted/revisions/1?validate=true",
+    "responseCode" : "200",
+    "timeStamp" : 1659293485011,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/getstarted','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659293205737,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/getstarted/?name=getstarted&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659293203145,
+    "user" : "eknath.dhoble@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/flowvariableDemo/revisions/2/debugsessions/1659256050873/?session=1659256050873&timeout=600",
+    "responseCode" : "201",
+    "timeStamp" : 1659256050364,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/flowvariableDemo/revisions/2/debugsessions/1659256025528",
+    "responseCode" : "403",
+    "timeStamp" : 1659256049131,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/flowvariableDemo/revisions/2/debugsessions/1659256025528/?session=1659256025528&timeout=600",
+    "responseCode" : "201",
+    "timeStamp" : 1659256025786,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/e/dev/apis/flowvariableDemo/revisions/2/deployments",
+    "responseCode" : "200",
+    "timeStamp" : 1659256009886,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/flowvariableDemo/revisions/1/debugsessions/1659255688404",
+    "responseCode" : "403",
+    "timeStamp" : 1659255724558,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/flowvariableDemo/revisions/1/debugsessions/1659255688404/?session=1659255688404&timeout=600",
+    "responseCode" : "201",
+    "timeStamp" : 1659255688571,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/flowvariableDemo/flowvariableDemo/?action=import",
+    "responseCode" : "201",
+    "timeStamp" : 1659255647059,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/flowvariableDemo/revisions/1?validate=true",
+    "responseCode" : "200",
+    "timeStamp" : 1659246282541,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/flowvariableDemo/revisions/1?validate=true",
+    "responseCode" : "200",
+    "timeStamp" : 1659246064880,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/flowvariableDemo/revisions/1?validate=true",
+    "responseCode" : "200",
+    "timeStamp" : 1659246052584,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/flowvariableDemo/revisions/1/deployments",
+    "responseCode" : "200",
+    "timeStamp" : 1659244269157,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/flowvariableDemo','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659244259649,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/flowvariableDemo/?name=flowvariableDemo&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659244257065,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/SampleFirstProxy/SampleFirstProxy/?action=import",
+    "responseCode" : "201",
+    "timeStamp" : 1659243802023,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/SampleFirstProxy/revisions/1?validate=true",
+    "responseCode" : "200",
+    "timeStamp" : 1659243563188,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "DELETE",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/SampleFirstProxy/revisions/1/debugsessions/1659243116430",
+    "responseCode" : "403",
+    "timeStamp" : 1659243504625,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/SampleFirstProxy/revisions/1/debugsessions/1659243116430/?session=1659243116430&timeout=600",
+    "responseCode" : "201",
+    "timeStamp" : 1659243116576,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/SampleFirstProxy/revisions/1/debugsessions/1659243087146/?session=1659243087146&timeout=600",
+    "responseCode" : "201",
+    "timeStamp" : 1659243087751,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "UPDATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/SampleFirstProxy/revisions/1?validate=true",
+    "responseCode" : "200",
+    "timeStamp" : 1659242854115,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/environments/dev/apis/SampleFirstProxy/revisions/1/deployments",
+    "responseCode" : "200",
+    "timeStamp" : 1659242547035,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "'{'path':'/applications/SampleFirstProxy','permissions':['get','put','delete']}'",
+    "requestUri" : "/v1/organizations/amer-api-partner38/userroles/apigee-training-user/permissions",
+    "responseCode" : "201",
+    "timeStamp" : 1659242539806,
+    "user" : "vijay.chebiyyam@infosys.com"
+  }, {
+    "operation" : "CREATE",
+    "request" : "''amer-api-partner38''",
+    "requestUri" : "/v1/organizations/amer-api-partner38/apis/SampleFirstProxy/?name=SampleFirstProxy&action=import&validate=true",
+    "responseCode" : "201",
+    "timeStamp" : 1659242537185,
+    "user" : "vijay.chebiyyam@infosys.com"
+  } ]
+}

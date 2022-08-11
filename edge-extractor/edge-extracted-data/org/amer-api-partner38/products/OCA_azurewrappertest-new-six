@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "/" ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1655298194167,
+  "createdBy" : "madhuri.munnelli@infosys.com",
+  "description" : "Test",
+  "displayName" : "AzureWrapperTest New six",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1655298195379,
+  "lastModifiedBy" : "madhuri.munnelli@infosys.com",
+  "name" : "OCA_azurewrappertest-new-six",
+  "proxies" : [ ],
+  "scopes" : [ ]
+}

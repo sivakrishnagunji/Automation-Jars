@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "**", "/**" ],
+  "approvalType" : "manual",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1580130196208,
+  "createdBy" : "merin_jose01@infosys.com",
+  "description" : "API Consumer is allowed to access all resources",
+  "displayName" : "CHANGE_MANAGEMENT_ALL",
+  "environments" : [ "test" ],
+  "lastModifiedAt" : 1647351734573,
+  "lastModifiedBy" : "vijay_kannan@infosys.com",
+  "name" : "CHANGE_MANAGEMENT_ALL",
+  "proxies" : [ "OAuth2ClientCredentials", "RecommendationManagement" ],
+  "scopes" : [ ]
+}

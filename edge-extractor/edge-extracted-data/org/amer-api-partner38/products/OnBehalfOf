@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1646827739240,
+  "createdBy" : "sivakrishna.gunji@infosys.com",
+  "description" : "",
+  "displayName" : "OnBehalfOf",
+  "environments" : [ "dev", "test" ],
+  "lastModifiedAt" : 1649747242035,
+  "lastModifiedBy" : "sivakrishna.gunji@infosys.com",
+  "name" : "OnBehalfOf",
+  "proxies" : [ "Generate-SAML2", "GenerateAccessToken", "GenerateSAML", "OAuth2OnBehalfOf", "OAuth2OnBehalfOf-New", "OauthDemo1" ],
+  "scopes" : [ ]
+}

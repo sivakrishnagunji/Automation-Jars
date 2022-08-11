@@ -1,0 +1,21 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "Portal",
+    "value" : "Y"
+  }, {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1644485888436,
+  "createdBy" : "madhuri.munnelli@infosys.com",
+  "description" : "",
+  "displayName" : "OneClickProduct",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1644485888436,
+  "lastModifiedBy" : "madhuri.munnelli@infosys.com",
+  "name" : "OneClickProduct",
+  "proxies" : [ ],
+  "scopes" : [ ]
+}

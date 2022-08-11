@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "manual",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1600254163911,
+  "createdBy" : "rohit.karadi@infosys.com",
+  "description" : "Product for Verifying the user for Infosys Health Portal",
+  "displayName" : "Infosys_HealthPortal_VerifyApi_Key",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1606460792320,
+  "lastModifiedBy" : "rohit.karadi@infosys.com",
+  "name" : "Infosys_HealthPortal_VerifyApi_Key",
+  "proxies" : [ "IHP-Drug-Formulary-IG-Restful-API", "IHP-Drug-Formulary-IG-Restful-API_V1", "LoginAPI_InfosysHealthPortal", "LoginAPI_InfosysHealthPortal_DeveloperPortal" ],
+  "scopes" : [ "openid", "patienthealth", "profile" ]
+}

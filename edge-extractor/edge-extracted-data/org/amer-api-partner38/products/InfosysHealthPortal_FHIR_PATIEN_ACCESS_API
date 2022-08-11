@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "/fhir/Encounter", "/fhir/Procedure", "/fhir/DocumentReference", "/fhir/Observation", "/fhir/Patient", "/fhir/AllergyIntolerance", "/fhir/List/{id}", "/fhir/ValueSet", "/fhir/Coverage", "/fhir/CareTeam", "/fhir/eob", "/fhir/MedicationKnowledge/{id}", "/fhir/Practitioner", "/fhir/CarePlan", "/fhir/CarePlan/{id}", "/fhir/CareTeam/{id}", "/fhir/Medication", "/fhir/Goal", "/fhir/CodeSystem", "/fhir/PractitionerRole", "/fhir/DiagnosticReport", "/fhir/CodeSystem/{id}", "/fhir/Condition", "/fhir/MedicationKnowledge", "/fhir/eob/{id}", "/fhir/Coverage/{id}", "/fhir/ValueSet/id", "/fhir/Organization", "/fhir/Condition/{id}", "/fhir/Device", "/fhir/StructureDefinition", "/fhir/List", "/fhir/Location", "/fhir/MedicationRequest", "/fhir/Immunization" ],
+  "approvalType" : "manual",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1605874374725,
+  "createdBy" : "rohit.karadi@infosys.com",
+  "description" : "InfosysHealthPortal_FHIR_PATIEN_ACCESS_API Swagger File upload for Developer Portal",
+  "displayName" : "InfosysHealthPortal_FHIR_PATIEN_ACCESS_API",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1606291270519,
+  "lastModifiedBy" : "rohit.karadi@infosys.com",
+  "name" : "InfosysHealthPortal_FHIR_PATIEN_ACCESS_API",
+  "proxies" : [ "Infosys_health_portal_DevPortal_All-API" ],
+  "scopes" : [ ]
+}

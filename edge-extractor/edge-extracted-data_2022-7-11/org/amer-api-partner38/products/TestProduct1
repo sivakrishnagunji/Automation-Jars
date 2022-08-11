@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "/" ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1644818537811,
+  "createdBy" : "madhuri.munnelli@infosys.com",
+  "description" : "Product creating for testing",
+  "displayName" : "TestProduct1",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1644818538766,
+  "lastModifiedBy" : "madhuri.munnelli@infosys.com",
+  "name" : "TestProduct1",
+  "proxies" : [ ],
+  "scopes" : [ ]
+}

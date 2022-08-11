@@ -1,0 +1,480 @@
+swagger: '2.0'
+info:
+  description: >-
+    APi to call SmartyStreet third party apis.
+  version: '1.0'
+  title: BW SmartyStreet 1.0
+host: serverRoot
+basePath: /smartyStreet/v1
+x-backend-connection-prod: 'https://us-street.api.smartystreets.com'
+x-backend-connection-preprod: 'https://us-street.api.smartystreets.com'
+x-backend-connection-basepath: /street-address/
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json  
+paths:
+  /address:
+    get:
+      tags:
+        - BW Smarty Street
+      summary: address validation
+      description: get address for validation.
+      operationId: getAddress
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Basic auth token .
+          required: true
+          type: string
+          x-example: AbCdEf123456
+        - name: Accept
+          in: header
+          description: Accept Media type
+          required: false
+          type: string
+          x-example: application/json
+        - name: applicationId
+          in: header
+          description: >-
+            Consumers should provide the applicationID, which identifies them
+            towards the backend.
+          required: false
+          type: string
+          x-example: LandandSea
+        - name: state
+          in: query
+          description: stateId
+          required: true
+          type: string
+          x-example: GA
+        - name: street2
+          in: query
+          description: street2 value
+          required: false
+          type: string
+          x-example: M/Y FELIX
+        - name: city
+          in: query
+          description: city name
+          required: true
+          type: string
+          x-example: SAVANNAH
+        - name: street
+          in: query
+          description: street name
+          required: true
+          type: string
+          x-example: 3124 RIVER DR
+        - name: zipcode
+          in: query
+          description: zip code
+          required: true
+          type: string
+          x-example: 31404          
+      responses:
+        '200':
+          description: ok
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers:
+            Cache-Control:
+              type: string
+              description: To be picked from configuration
+            Date:
+              type: string
+              description: set current date time
+            Expires:
+              type: string
+              description: set current date time
+            Content-Type:
+              type: string
+              description: Content type in response              
+
+        '401':
+          description: URI does not represent a recognised resource
+          schema:
+            $ref: '#/definitions/HTTP401Error'
+        '404':
+          description: URI does not represent a recognised resource
+          schema:
+            $ref: '#/definitions/HTTP404Error'            
+        '405':
+          description: the request method is not supported by this resource
+          schema:
+            $ref: '#/definitions/HTTP405Error'
+        '406':
+          description: The Accept header is invalid
+          schema:
+            $ref: '#/definitions/HTTP406Error'
+        '413':
+          description: The request payload exceeds a maximum size
+          schema:
+            $ref: '#/definitions/HTTP415Error'
+        '414':
+          description: Request-URI is too long
+          schema:
+            $ref: '#/definitions/HTTP414Error'
+        '415':
+          description: The value of the Content-Type header is invalid
+          schema:
+            $ref: '#/definitions/HTTP415Error'
+        '422':
+          description: >-
+            The request was well-formed but was unable to be followed due to
+            semantic errors
+          schema:
+            $ref: '#/definitions/HTTP422Error'
+        '429':
+          description: Api Quota limit reached
+          schema:
+            $ref: '#/definitions/HTTP429Error'
+        '500':
+          description: >-
+            The authorization server encountered an unexpected condition that
+            prevented it fromfulfilling the request
+          schema:
+            $ref: '#/definitions/GenericError'
+        default:
+          description: >-
+            Common Error
+      security:
+        - oauth:
+            - BW_SMARTYSTREET_ALL
+securityDefinitions:
+  oauth:
+    type: oauth2
+    tokenUrl: 'http://merinorg01-test.apigee.net/oauth/client_credential'
+    flow: accessCode
+    authorizationUrl: 'http://merinorg01-test.apigee.net/oauth/authorize'
+    scopes:
+      BW_SMARTYSTREET_ALL: API Consumer is allowed to access all resources         
+definitions:
+  GenericError:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: >-
+          The authorization server encountered an unexpected condition that
+          prevented it from fulfilling the request
+      error:
+        type: string
+        example: server_error
+      message:
+        type: string
+        example: server_error
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: GenericError
+  Components:
+    type: object
+    properties:
+      primary_number:
+        type: string
+        example: '3124'
+      street_name:
+        type: string
+        example: 'River'
+      street_suffix:
+        type: string
+        example: 'Dr'
+      city_name:
+        type: string
+        example: 'Savannah'
+      default_city_name:
+        type: string
+        example: 'Savannah'
+      state_abbreviation:
+        type: string
+        example: 'GA'
+      zipcode:
+        type: string
+        example: '31404'
+      plus4_code:
+        type: string
+        example: '5027'
+      delivery_point:
+        type: string
+        example: '24'
+      delivery_point_check_digit:
+        type: string
+        example: '8'         
+    title: components
+  Metadata:
+    type: object
+    properties:
+      record_type:
+        type: string
+        example: 'S'
+      zip_type:
+        type: string
+        example: 'Standard'
+      county_fips:
+        type: string
+        example: '13051'
+      county_name:
+        type: string
+        example: 'Chatham'
+      carrier_route:
+        type: string
+        example: 'C046'
+      congressional_district:
+        type: string
+        example: '01' 
+      rdi:
+        type: string
+        example: 'Commercial'
+      elot_sequence:
+        type: string
+        example: '0015'
+      elot_sort:
+        type: string
+        example: 'A'
+      latitude:
+        type: number
+        example: 32.02718
+      longitude:
+        type: number
+        example: -81.04963 
+      precision:
+        type: string
+        example: 'Zip9'
+      time_zone:
+        type: string
+        example: 'Eastern'
+      utc_offset:
+        type: number
+        example: -5
+      dst:
+        type: boolean
+        example: true         
+    title: metadata
+  Analysis:
+    type: object
+    properties:
+      dpv_match_code:
+        type: string
+        example: 'Y'
+      dpv_footnotes:
+        type: string
+        example: 'AABB'
+      dpv_cmra:
+        type: string
+        example: 'N'
+      dpv_vacant:
+        type: string
+        example: 'N'
+      active:
+        type: string
+        example: 'Y'
+    title: analysis
+  HTTP401Error:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: Autorization Error
+      error:
+        type: string
+        example: Invalid Auth
+      message:
+        type: string
+        example: Invalid Auth
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: HTTP401Error    
+  HTTP404Error:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: URI does not represent a recognised resource
+      error:
+        type: string
+        example: Resource Not Found
+      message:
+        type: string
+        example: Resource Not Found
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: HTTP404Error
+  HTTP405Error:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: The request method is not supported by this  resource
+      error:
+        type: string
+        example: Method Not Allowed
+      message:
+        type: string
+        example: Method Not Allowed
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: HTTP405Error
+  HTTP406Error:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: The Accept header is invalid
+      error:
+        type: string
+        example: Not Acceptable
+      message:
+        type: string
+        example: Not Acceptable
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: HTTP406Error
+  HTTP414Error:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: Request-URI is too long
+      error:
+        type: string
+        example: Request URI Too Long
+      message:
+        type: string
+        example: Request URI Too Long
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: HTTP414Error
+    description: Request-URI is too long
+  HTTP415Error:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: The value of the Content-Type header is invalid
+      error:
+        type: string
+        example: Unsupported Media Type
+      message:
+        type: string
+        example: Unsupported Media Type
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: HTTP415Error
+    description: The value of the Content-Type header is invalid
+  HTTP422Error:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: >-
+          The request was well-formed but was unable to be followed due to
+          semantic errors
+      error:
+        type: string
+        example: Unprocessable Entity
+      message:
+        type: string
+        example: Unprocessable Entity
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: HTTP422Error
+  HTTP429Error:
+    type: object
+    required:
+      - description
+      - error
+      - message
+      - transactionId
+    properties:
+      description:
+        type: string
+        example: Api Quota limit reached
+      error:
+        type: string
+        example: Too Many Requests
+      message:
+        type: string
+        example: Too Many Requests
+      transactionId:
+        type: string
+        example: 2f21-1fwef2-af2313-23feda
+    title: HTTP429Error
+  AddressResponse:
+    type: object
+    properties:
+      input_index:
+        type: integer
+        example: 0
+      candidate_index:
+        type: integer
+        example: 0         
+      delivery_line_1:
+        type: string
+        example: '3124 River Dr'
+      last_line:
+        type: string
+        example: 'Savannah GA 31404-5027'
+      delivery_point_barcode:
+        type: string
+        example: '314045027248'
+      components:
+        $ref: '#/definitions/Components'
+      metadata:
+        $ref: '#/definitions/Metadata' 
+      analysis:
+        $ref: '#/definitions/Analysis'
+    title: AddressResponse

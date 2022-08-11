@@ -1,0 +1,8 @@
+{
+  "encrypted" : false,
+  "entry" : [ {
+    "name" : "ChangeManagement",
+    "value" : "{\"enabled\":\"true\",\"addresslist\":\"localhost,local\"}"
+  } ],
+  "name" : "SF-KVM-CSRFProtection"
+}

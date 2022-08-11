@@ -1,0 +1,357 @@
+openapi: 3.0.1
+info:
+  title: IHP HEALTH BUSINESS OPERATIONAL API  
+  version: "1.0"
+  description: Test Description
+servers:
+- url: "https://amer-api-partner38-dev.apigee.net/infosys_health_portal_devportal_health_business_api"
+tags:
+- name: admin-controller
+  description: Admin Controller
+- name: member-360-controller
+  description: Member 360 Controller
+- name: master-data-controller
+  description: Master Data Controller
+paths:
+  /fhir/Admin/rule/all:
+    get:
+      tags:
+      - admin-controller
+      summary: findAllRule
+      operationId: findAllRuleUsingGET_1
+      parameters:
+      - name: "apikey"
+        in: "header"
+        description: "apikey"
+        required: true
+        schema:
+          type: "string"
+      - name: "jwt-token"
+        in: "header"
+        description: "jwt-token"
+        required: true
+        schema:
+          type: "string"    
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Admin/rule/create:
+    post:
+      tags:
+      - admin-controller
+      summary: createRule
+      operationId: createRuleUsingPOST_1
+      parameters:
+      - name: "apikey"
+        in: "header"
+        description: "apikey"
+        required: true
+        schema:
+          type: "string"
+      - name: "jwt-token"
+        in: "header"
+        description: "jwt-token"
+        required: true
+        schema:
+          type: "string"    
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      requestBody:
+        description: ruleSetting
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RuleSettingForm'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RuleSettingForm'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        201:
+          description: Created
+          content: {}
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+      x-codegen-request-body-name: ruleSetting
+  /fhir/Admin/rule/delete/{id}:
+    delete:
+      tags:
+      - admin-controller
+      summary: deleteRule
+      operationId: deleteRuleUsingDELETE_1
+      parameters:
+      - name: "apikey"
+        in: "header"
+        description: "apikey"
+        required: true
+        schema:
+          type: "string"
+      - name: "jwt-token"
+        in: "header"
+        description: "jwt-token"
+        required: true
+        schema:
+          type: "string"    
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+        204:
+          description: No Content
+          content: {}
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+  /fhir/MasterData/RuleSettingOptions:
+    get:
+      tags:
+      - master-data-controller
+      summary: ruleSettings
+      operationId: ruleSettingsUsingGET_1
+      parameters:
+      - name: "apikey"
+        in: "header"
+        description: "apikey"
+        required: true
+        schema:
+          type: "string"
+      - name: "jwt-token"
+        in: "header"
+        description: "jwt-token"
+        required: true
+        schema:
+          type: "string"    
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/MasterData/UserRoles:
+    get:
+      tags:
+      - master-data-controller
+      summary: userRoles
+      operationId: userRolesUsingGET_1
+      parameters:
+      - name: "apikey"
+        in: "header"
+        description: "apikey"
+        required: true
+        schema:
+          type: "string"
+      - name: "jwt-token"
+        in: "header"
+        description: "jwt-token"
+        required: true
+        schema:
+          type: "string"    
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      responses:
+        200:
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  /fhir/Member360/{id}:
+    get:
+      tags:
+      - member-360-controller
+      summary: getMember360
+      operationId: getMember360UsingGET_1
+      parameters:
+      - name: "apikey"
+        in: "header"
+        description: "apikey"
+        required: true
+        schema:
+          type: "string"
+      - name: "jwt-token"
+        in: "header"
+        description: "jwt-token"
+        required: true
+        schema:
+          type: "string"    
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: _format
+        in: query
+        description: _format
+        schema:
+          type: string
+          default: json
+      - name: _pretty
+        in: query
+        description: _pretty
+        schema:
+          type: boolean
+          default: true
+      - name: _count
+        in: query
+        description: _count
+        schema:
+          type: integer
+          format: int32
+          default: 5
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+components:
+  schemas:
+    RuleSettingForm:
+      type: object
+      properties:
+        apiRelativePath:
+          type: string
+        id:
+          type: integer
+          format: int64
+        orgName:
+          type: string
+        parameterName:
+          type: string
+        values:
+          type: object
+          properties: {}

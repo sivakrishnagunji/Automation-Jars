@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1657258906702,
+  "createdBy" : "shrenikkumar_s@infosys.com",
+  "description" : "Virgin Media POC",
+  "displayName" : "VM API Product",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1658920398734,
+  "lastModifiedBy" : "shrenikkumar_s@infosys.com",
+  "name" : "VM API Product",
+  "proxies" : [ "EmployeeManagement-MockBackend", "MSA-EmployeeManagement", "MT-UserManagement", "OAuth2ClientCredentials2" ],
+  "scopes" : [ "CREATE_EMPLOYEE_RECORD", "CREATE_EMPLOYEE_RECORD_XML", "EMPLOYEE_MANAGEMENT_ALL", "FETCH_EMPLOYEE_RECORD" ]
+}

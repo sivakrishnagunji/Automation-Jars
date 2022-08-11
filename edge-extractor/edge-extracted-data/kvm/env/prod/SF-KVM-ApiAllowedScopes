@@ -1,0 +1,11 @@
+{
+  "encrypted" : false,
+  "entry" : [ {
+    "name" : "DocumentManagement",
+    "value" : "[{\"flowName\":\"listDocument\",\"allowedScopesList\":\"DOCUMENT_MANAGEMENT_ALL\"},{\"flowName\":\"createDocument\",\"allowedScopesList\":\"DOCUMENT_MANAGEMENT_ALL\"},{\"flowName\":\"retrieveDocument\",\"allowedScopesList\":\"DOCUMENT_MANAGEMENT_ALL\"},{\"flowName\":\"updateDocument\",\"allowedScopesList\":\"DOCUMENT_MANAGEMENT_ALL\"},{\"flowName\":\"registerListener\",\"allowedScopesList\":\"DOCUMENT_MANAGEMENT_ALL\"},{\"flowName\":\"unregisterListener\",\"allowedScopesList\":\"DOCUMENT_MANAGEMENT_ALL\"},{\"flowName\":\"listener\",\"allowedScopesList\":\"DOCUMENT_MANAGEMENT_ALL\"}]"
+  }, {
+    "name" : "ChangeManagement",
+    "value" : "[{\"flowName\":\"listChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"createChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"retrieveChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"patchChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"deleteChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"registerListener\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"unregisterListener\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"}]"
+  } ],
+  "name" : "SF-KVM-ApiAllowedScopes"
+}

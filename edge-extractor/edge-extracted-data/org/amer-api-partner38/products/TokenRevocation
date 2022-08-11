@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1647496190828,
+  "createdBy" : "sivakrishna.gunji@infosys.com",
+  "description" : "",
+  "displayName" : "TokenRevocation",
+  "environments" : [ "dev", "prod", "test" ],
+  "lastModifiedAt" : 1647927618260,
+  "lastModifiedBy" : "sivakrishna.gunji@infosys.com",
+  "name" : "TokenRevocation",
+  "proxies" : [ "Token-Revocation", "TokenRevocation", "Verify-Access-Token" ],
+  "scopes" : [ ]
+}

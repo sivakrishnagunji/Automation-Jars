@@ -1,0 +1,14 @@
+{
+  "encrypted" : false,
+  "entry" : [ {
+    "name" : "TMFChangeManagement",
+    "value" : "{\"spikearrest\":\"50ps\",\"spike_arrest_enabled\":\"true\"}"
+  }, {
+    "name" : "OAuth2ClientCredentials",
+    "value" : "{\"spikearrest\":\"50ps\",\"spike_arrest_enabled\":\"true\"}"
+  }, {
+    "name" : "Default",
+    "value" : "{\"spikearrest\":\"50ps\",\"spike_arrest_enabled\":\"true\"}"
+  } ],
+  "name" : "SF-KVM-SpikeArrest"
+}

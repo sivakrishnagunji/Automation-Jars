@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "**", "/**" ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1606888410948,
+  "createdBy" : "merin_jose01@infosys.com",
+  "description" : "Allows developer to have access to all BW Smart street operations.",
+  "displayName" : "BW_SMARTYSTREET_ALL",
+  "environments" : [ "test" ],
+  "lastModifiedAt" : 1609152996598,
+  "lastModifiedBy" : "merin_jose01@infosys.com",
+  "name" : "BW_SMARTYSTREET_ALL",
+  "proxies" : [ "BW_SmartyStreet_v1", "OAuth2ClientCredentials" ],
+  "scopes" : [ ]
+}

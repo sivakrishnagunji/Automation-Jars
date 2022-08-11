@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1647429577153,
+  "createdBy" : "madhuri.munnelli@infosys.com",
+  "description" : "",
+  "displayName" : "Auto Product",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1647429577153,
+  "lastModifiedBy" : "madhuri.munnelli@infosys.com",
+  "name" : "AutoProduct",
+  "proxies" : [ "api_test", "apigee-test_bundle" ],
+  "scopes" : [ ]
+}

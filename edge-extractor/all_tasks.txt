@@ -1,0 +1,35 @@
+deployProxies to org
+deploySharedFlows to org
+
+exportApps
+exportDevs
+exportEnvKVM
+exportFlowHooks
+exportTargetServers
+exportOrgKVM
+exportProducts
+exportProxies
+exportProxyKVM
+exportReports
+exportSharedFlows
+exportAllSpecs
+exportKeyStores
+exportVirtualHosts
+exportReferences
+exportCaches
+exportRoles
+exportCollections
+exportAlerts
+exportCompanies
+exportExtensions
+exportAnalyticQueries
+exportAnalyticExports
+exportAuditLogs
+exportEnvResources
+exportOrgResources
+
+readCSVApps
+readCSVDevs
+
+undeployProxies to org
+undeploySharedFlows to org

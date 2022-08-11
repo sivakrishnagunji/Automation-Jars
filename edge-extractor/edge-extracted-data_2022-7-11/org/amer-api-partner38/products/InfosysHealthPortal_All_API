@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "/fhir/ApiMetrics/performance", "/fhir/ApiMetrics/PatientAccess/{apiType}", "/fhir/ApiMetrics/PatientAccess/search/{apiType}", "/fhir/ApiMetrics/ProviderAccess/{apiType}", "/fhir/ApiMetrics/mostSearchedApis", "/fhir/ApiMetrics/ProviderAccess/search/{apiType}" ],
+  "approvalType" : "manual",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "private"
+  } ],
+  "createdAt" : 1605873994786,
+  "createdBy" : "rohit.karadi@infosys.com",
+  "description" : "InfosysHealthPortal_All_PLATFORM_API SwaggerFileupload for Developer Portal",
+  "displayName" : "InfosysHealthPortal_All_PLATFORM_API",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1606394722325,
+  "lastModifiedBy" : "rohit.karadi@infosys.com",
+  "name" : "InfosysHealthPortal_All_API",
+  "proxies" : [ "Infosys_health_portal_DevPortal_Platform_API" ],
+  "scopes" : [ ]
+}

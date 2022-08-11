@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "/" ],
+  "approvalType" : "auto",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1655879815953,
+  "createdBy" : "madhuri.munnelli@infosys.com",
+  "description" : "",
+  "displayName" : "Infosys Digital Commerce Platform (EPOCH)",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1655879816849,
+  "lastModifiedBy" : "madhuri.munnelli@infosys.com",
+  "name" : "OCA_test-prod-subs-_infosys-digital-commerce-platform--epoch-",
+  "proxies" : [ ],
+  "scopes" : [ ]
+}

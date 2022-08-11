@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "/*" ],
+  "approvalType" : "manual",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "private"
+  } ],
+  "createdAt" : 1647432779501,
+  "createdBy" : "madhuri.munnelli@infosys.com",
+  "description" : "",
+  "displayName" : "ManualProduct",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1647432779501,
+  "lastModifiedBy" : "madhuri.munnelli@infosys.com",
+  "name" : "ManualProduct",
+  "proxies" : [ "api_test" ],
+  "scopes" : [ ]
+}

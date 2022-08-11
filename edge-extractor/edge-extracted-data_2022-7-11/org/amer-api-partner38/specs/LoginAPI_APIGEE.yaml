@@ -1,0 +1,64 @@
+openapi: 3.0.1
+info:
+  title: IHP_ACCESS_API
+  version: "1.0"
+  description: ACCESS API
+servers:
+- url: https://amer-api-partner38-dev.apigee.net/loginapideveloperportal
+tags:
+- name: generate-jwt-token
+  description: login-api-generate-jwt-token
+paths:
+  /:
+    post:
+      tags:
+      - generate-jwt-token
+      summary: generte JWT Token
+      operationId: findAllPractionerUsingGET_1
+      parameters:
+      - name: apikey
+        in: header
+        description: apikey
+        required: true
+        schema:
+          type: string
+      - name: Username
+        in: header
+        required: true
+        description: username
+        schema:
+          type: string
+      - name: Password
+        in: header
+        required: true
+        description: password
+        schema:
+          type: string
+      - name: scope
+        in: query
+        description: scope
+        schema:
+          type: string
+          readOnly: true
+        example:
+          value:openid+profile+patienthealth/ 
+      responses:
+        200:
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+  

@@ -1,0 +1,18 @@
+{
+  "apiResources" : [ "/fhir/PractitionerRole", "/fhir/Practitioner" ],
+  "approvalType" : "manual",
+  "attributes" : [ {
+    "name" : "access",
+    "value" : "public"
+  } ],
+  "createdAt" : 1605874314426,
+  "createdBy" : "rohit.karadi@infosys.com",
+  "description" : "InfosysHealthPortal_FHIR_PROVIDER_DIRECTORY_API Swagger File upload for Developer Poral",
+  "displayName" : "InfosysHealthPortal_FHIR_PROVIDER_DIRECTORY_API",
+  "environments" : [ "dev" ],
+  "lastModifiedAt" : 1606291316719,
+  "lastModifiedBy" : "rohit.karadi@infosys.com",
+  "name" : "InfosysHealthPortal_FHIR_PROVIDER_DIRECTORY_API",
+  "proxies" : [ "Infosys_health_portal_DevPortal_All-API" ],
+  "scopes" : [ ]
+}

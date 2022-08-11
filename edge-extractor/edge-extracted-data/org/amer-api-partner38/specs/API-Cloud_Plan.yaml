@@ -1,0 +1,338 @@
+openapi: 3.0.1
+info:
+  title: Plan
+  description: 'This API provides capabilities to manage Plans to be associated with Products to control how different APIs can be accessed by different consumers. It supports the following features - <br><br> 1. Adding a new Plan, <br> 2. Updating an existing Plan, <br> 3. Fetching all Plans, <br> 4. Fetching a specific Plan, <br> 5. Delete a Plan <br> 6. Map Products to a Plan'
+  termsOfService: https://www.infosys.com/terms-of-use.html
+  contact:
+    name: API Cloud
+    email: apicloud@infosys.com
+  version: 1.0.0
+servers:
+- url: http://apicloud-staging.ad.infosys.com:31846/apiCloud/v1
+- url: https://oneclickapi-gw.imapnext.com/apiCloud/v1
+- url: https://apicloud-gw.infosysapps.com/apiCloud/v1
+tags:
+- name: "Plan"
+- name: "Product Plan Mapping"
+paths:
+  /plans:
+    post:
+      tags:
+      - "Plan"
+      summary: Create a new Plan
+      operationId: createPlan
+      requestBody:
+        description: Add a new Plan on API Cloud
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Plan'
+        required: true
+      responses:
+        201: 
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+        400:
+          description: Bad Request
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        401:
+          description: Unauthorized
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - api_key: []
+    get:
+      tags:
+      - "Plan"
+      summary: Fetch a list of matching Plans
+      description: Retrieve a list of Plans by status
+      operationId: fetchPlans
+      parameters:
+      - name: status
+        in: query
+        description: Indicator whether Plan is active or not
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Plan'
+        400:
+          description: Bad Request
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        401:
+          description: Unauthorized
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - api_key: []
+  /plans/{planId}:
+    patch:
+      tags:
+      - "Plan"
+      summary: Update an existing Plan
+      description: Update one or more attributes of an already existing Plan
+      operationId: updatePlan
+      parameters:
+      - name: planId
+        in: path
+        description: ID of the Plan to be updated
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Plan'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+        400:
+          description: Bad Request
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        401:
+          description: Unauthorized
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: Not Found
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - "Plan"
+      summary: Delete an existing Plan
+      description: Delete an existing Plan
+      operationId: deletePlan
+      parameters:
+      - name: planId
+        in: path
+        description: ID of the Plan to be deleted
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        204:
+          description: No Content
+          content: {}
+        400:
+          description: Bad Request
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        401:
+          description: Unauthorized
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: Not Found
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - api_key: []
+    get:
+      tags:
+      - "Plan"
+      summary: Fetch a specific Plan
+      description: Retrieve a specific Plan based on ID
+      operationId: fetchPlan
+      parameters:
+      - name: planId
+        in: path
+        description: ID of the Plan to be returned
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+        400:
+          description: Bad Request
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        401:
+          description: Unauthorized
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: Not Found
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - api_key: []
+  /plans/{planId}/products:
+    post:
+      tags:
+      - "Product Plan Mapping"
+      summary: Add one or more products to a Plan
+      operationId: mapPlanProducts
+      parameters:
+      - name: planId
+        in: path
+        description: ID of the Plan to be returned
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        description: Map Products to Plans
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductPlan'
+        required: true
+      responses:
+        201: 
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+        400:
+          description: Bad Request
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        401:
+          description: Unauthorized
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - api_key: []
+components:
+  schemas:
+    Plan:
+      type: object
+      properties:
+        planId:
+          type: integer
+          format: int32
+        planName:
+          type: string
+        planDescription:
+          type: string
+        quotaLimit:
+          type: integer 
+          format: int32 
+        quotaInterval:
+          type: string
+          enum:
+          - Second
+          - Minute
+          - Hour
+          - Week
+          - Month
+          - Year
+        actionBy:
+          type: string
+        status: 
+          type: boolean
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              productId:
+                type: integer
+                format: int32
+              productName:
+                type: string
+    ProductPlan:
+      type: object
+      properties:
+        actionBy:
+          type: string
+        actionTs:
+          type: string
+        add:
+          type: array
+          items:
+            type: object
+            properties:
+              productId:
+                type: integer
+                format: int32
+              productName:
+                type: string
+        remove:
+          type: array
+          items:
+            type: object
+            properties:
+              productId:
+                type: integer
+                format: int32
+              productName:
+                type: string
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: X-Authorization
+      in: header
