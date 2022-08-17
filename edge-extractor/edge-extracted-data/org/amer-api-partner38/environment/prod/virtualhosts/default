@@ -1,9 +1,0 @@
-{
-  "hostAliases" : [ "amer-api-partner38-prod.apigee.net" ],
-  "interfaces" : [ ],
-  "listenOptions" : [ ],
-  "name" : "default",
-  "port" : "80",
-  "retryOptions" : [ ],
-  "useBuiltInFreeTrialCert" : false
-}

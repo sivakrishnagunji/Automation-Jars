@@ -1,8 +1,0 @@
-{
-  "encrypted" : false,
-  "entry" : [ {
-    "name" : "ChangeManagement",
-    "value" : "{\"security_request_xss_headers\" : { \"enabled\" : true , \"regex\" : \"[^$|{}<>]\"},\"security_request_xss_query\" : { \"enabled\" : true , \"regex\" : \"[^$|{}<>]\"},\"security_request_xss_payload\" : { \"enabled\" : false , \"regex\" : \"\"},\"security_request_xml_escape\" : { \"enabled\" : false , \"xml-escape-vars\" : \"\"}}"
-  } ],
-  "name" : "SF-KVM-SecurityRequestXSS"
-}

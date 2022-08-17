@@ -91,7 +91,7 @@ module.exports = function(grunt) {
     },
     readCSVDevs: {
         in_devs: './input/devs.csv',
-        out_devs: './edge-extracted-data/devs/'
+        out_devs: './edge-extracted-data/devs/'image.png
       },
     readCSVApps: {
         in_apps: './input/apps.csv',
