@@ -3,8 +3,8 @@ module.exports = {
 	from: {
 		version: '1',
 		url: 'https://api.enterprise.apigee.com',
-		userid: 'gaurav_bhandari02@infosys.com',
-		passwd: 'ApigeeInfy@4321',
+		userid: '',
+		passwd: '',
 		org: 'amer-api-partner38',
 		env: 'prod'
 	},
