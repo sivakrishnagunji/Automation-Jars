@@ -5,15 +5,15 @@ module.exports = {
 		url: 'https://api.enterprise.apigee.com',
 		userid: '',
 		passwd: '',
-		org: 'amer-api-partner38',
+		org: '',
 		env: 'prod'
 	},
 	to: {
 		version: '19.04',
 		url: 'https://api.enterprise.apigee.com',
-		userid: 'test@infosys.com',
+		userid: '',
 		passwd: 'test',
-		org: 'amer-api-partne',
+		org: '',
 		env: 'te'
 	}
 } ;
